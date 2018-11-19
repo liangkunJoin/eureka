@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.netflix.appinfo.EurekaInstanceConfig</OriginalElement>
+  <nodes>
+    <node x="435.0" y="240.0">com.netflix.appinfo.EurekaArchaius2InstanceConfig</node>
+    <node x="425.0" y="320.0">com.netflix.appinfo.Ec2EurekaArchaius2InstanceConfig</node>
+    <node x="175.5" y="240.0">com.netflix.appinfo.PropertiesInstanceConfig</node>
+    <node x="137.0" y="80.0">com.netflix.appinfo.EurekaInstanceConfig</node>
+    <node x="154.5" y="9.0">com.google.inject.ImplementedBy</node>
+    <node x="0.0" y="320.0">com.netflix.appinfo.MyDataCenterInstanceConfig</node>
+    <node x="237.0" y="320.0">com.netflix.appinfo.CloudInstanceConfig</node>
+    <node x="413.5" y="160.0">com.netflix.appinfo.AbstractInstanceConfig</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.netflix.appinfo.MyDataCenterInstanceConfig" target="com.netflix.appinfo.EurekaInstanceConfig">
+      <point x="-54.25" y="-15.0" />
+      <point x="54.25" y="135.0" />
+      <point x="166.0" y="135.0" />
+      <point x="-58.0" y="15.0" />
+    </edge>
+    <edge source="com.netflix.appinfo.EurekaArchaius2InstanceConfig" target="com.netflix.appinfo.AbstractInstanceConfig">
+      <point x="0.0" y="-15.0" />
+      <point x="45.5" y="15.0" />
+    </edge>
+    <edge source="com.netflix.appinfo.EurekaInstanceConfig" target="com.google.inject.ImplementedBy">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.netflix.appinfo.PropertiesInstanceConfig" target="com.netflix.appinfo.EurekaInstanceConfig">
+      <point x="-48.5" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.netflix.appinfo.PropertiesInstanceConfig" target="com.netflix.appinfo.AbstractInstanceConfig">
+      <point x="48.5" y="-15.0" />
+      <point x="321.0" y="215.0" />
+      <point x="459.0" y="215.0" />
+      <point x="-45.5" y="15.0" />
+    </edge>
+    <edge source="com.netflix.appinfo.CloudInstanceConfig" target="com.netflix.appinfo.PropertiesInstanceConfig">
+      <point x="0.0" y="-15.0" />
+      <point x="48.5" y="15.0" />
+    </edge>
+    <edge source="com.netflix.appinfo.AbstractInstanceConfig" target="com.netflix.appinfo.EurekaInstanceConfig">
+      <point x="0.0" y="-15.0" />
+      <point x="504.5" y="135.0" />
+      <point x="282.0" y="135.0" />
+      <point x="58.0" y="15.0" />
+    </edge>
+    <edge source="com.netflix.appinfo.Ec2EurekaArchaius2InstanceConfig" target="com.netflix.appinfo.EurekaArchaius2InstanceConfig">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.netflix.appinfo.MyDataCenterInstanceConfig" target="com.netflix.appinfo.PropertiesInstanceConfig">
+      <point x="54.25" y="-15.0" />
+      <point x="162.75" y="295.0" />
+      <point x="224.0" y="295.0" />
+      <point x="-48.5" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="338.0" y="175.5" />
+  <SelectedNodes>
+    <node>com.netflix.appinfo.EurekaInstanceConfig</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
