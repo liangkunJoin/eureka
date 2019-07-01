@@ -410,6 +410,56 @@ public interface EurekaClientConfig {
      *
      * @return true to enable fetching delta information for registry, false to
      *         get the full registry.
+     *
+     *
+     *         批注： 该参数在客服端主要配置如下
+     *
+     *           {
+     *              "sourceType": "org.springframework.cloud.netflix.eureka.EurekaClientConfigBean",
+     *              "defaultValue": false,
+     *              "name": "eureka.client.disable-delta",
+     *              "type": "java.lang.Boolean"
+     *          },
+     *          {
+     *              "sourceType": "org.springframework.cloud.netflix.eureka.EurekaClientConfigBean",
+     *              "defaultValue": false,
+     *              "name": "eureka.client.log-delta-diff",
+     *              "type": "java.lang.Boolean"
+     *          }
+     *
+     *          在服务端配置如下：
+     *
+     *          {
+     *              "sourceType": "org.springframework.cloud.netflix.eureka.server.EurekaServerConfigBean",
+     *              "defaultValue": false,
+     *              "name": "eureka.server.disable-delta",
+     *              "type": "java.lang.Boolean"
+     *          },
+     *          {
+     *              "sourceType": "org.springframework.cloud.netflix.eureka.server.EurekaServerConfigBean",
+     *              "defaultValue": 0,
+     *              "name": "eureka.server.delta-retention-timer-interval-in-ms",
+     *              "type": "java.lang.Long"
+     *          },
+     *          {
+     *              "sourceType": "org.springframework.cloud.netflix.eureka.server.EurekaServerConfigBean",
+     *              "defaultValue": 0,
+     *              "name": "eureka.server.retention-time-in-m-s-in-delta-queue",
+     *              "type": "java.lang.Long"
+     *          }
+     *
+     *          eureka提供了delta参数，在client端及server端都有。client端主要是控制刷新registry的时候，
+     *          是否使用调用/apps/delta接口，然后根据返回数据的ActionType来作用于本地数据。而server端则提供/apps/delta接口，
+     *          它的主要逻辑是在registry的修改操作都会放recentlyChangedQueue存放RecentlyChangedItem事件，
+     *          然后有个定时任务去剔除距离上次更新时间超过指定阈值的item；而查询接口则是从recentlyChangedQueue获取数据然后返回。
+     *
+     *          client端主要是
+     *              eureka.client.disable-delta、eureka.client.log-delta-diff两个参数；
+     *          server端主要是
+     *              eureka.server.disable-delta、eureka.server.delta-retention-timer-interval-in-ms、
+     *              eureka.server.retention-time-in-m-s-in-delta-queue三个参数。
+     *
+     *
      */
     boolean shouldDisableDelta();
 

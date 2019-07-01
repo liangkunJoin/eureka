@@ -35,7 +35,7 @@ public interface DataCenterInfo {
     enum Name {Netflix, Amazon, MyOwn}
 
 
-    
+
 
     Name getName();
 }
